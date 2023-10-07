@@ -25,19 +25,25 @@ void main()
     n = sizeof(ran) / sizeof(ran[0]);
 }
 
+
+void	swap(int *a, int *b)
+{
+	int	tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
 void bubble(int ran[], int n)
 {
-    int i, j, temp;
+    int i, j;
     for (i = 0; i < n; i++)
     {
         for (j = i + 1; j < n; j++)
         {
             if (ran[j] < ran[i])
-            {
-                temp = ran[i];
-                ran[i] = ran[j];
-                ran[j] = temp;
-            }
+				swap(&ran[i],&ran[j]);
         }
         printf("%d ",ran[i]);
     }
